@@ -70,16 +70,12 @@
 					<div class="form-left col-sm-6">
 						<div class="form-item ">
 							<label for="#type-event">Тип мероприятия</label>
-							<select class="event-type" name="" id="type-event">
-								<option value="1">День Рождения</option>
-								<option value="2">Another option</option>
-								<option value="3">A disabled option</option>
-								<option value="4">Potato</option>
+							<select class="event-type" id="type-event">
 							</select>
 						</div>
 						<div class="form-item ">
-							<label for="#type-event">Дата мероприятия</label>
-							<input id="type-event" type='text' class="datepicker-here data-event">
+							<label for="#date-event">Дата мероприятия</label>
+							<input id="date-event" type='text' class="datepicker-here data-event">
 							<span class="input-icon"><i class="far fa-calendar-alt"></i></span>
 						</div>
 						<div class="form-item ">
@@ -94,7 +90,7 @@
 						</div>
 					</div>
 					<div class="form-right col-sm-6">
-				 		<h3>День рождения</h3>
+				 		<!-- <h3>День рождения</h3>
 			  		<div class="owl-carousel" id= "owl-order-menu">
 			  			<div class="item">
 			  				<ul>
@@ -216,12 +212,12 @@
 				  				</li>
 				  			</ul>
 			  		 	</div>
-			  		</div>
+			  		</div> -->
 					</div>
 				</div>
 				<div class="row offset-5">
 						<a class="btn-cancel" href="../index.html">Отменить заказ</a>
-						<a class="btn-continue btn-main btn-filled" href="form-third.html">Далее</a>
+						<a class="btn-continue btn-main btn-filled" id='addEventInfo' href="form-third.html">Далее</a>
 				</div>
 			</form>
 		</div>
@@ -258,11 +254,14 @@
 	</footer>
 	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="../libs/jquery.mask.js"></script>
+	<script src="../libs/air-datepicker-master/dist/js/datepicker.min.js"></script>
+	<script src="../libs/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
+
+	<script src="./event.js"></script>
 	<script src="../js/index.js"></script>
+
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../libs/owl-carousel/dist/owl.carousel.min.js"></script>
-	<script src="../libs/jquery-nice-select-1.1.0/js/jquery.nice-select.min.js"></script>
-	<script src="../libs/air-datepicker-master/dist/js/datepicker.min.js"></script>
+	
 </body>
 </html>

@@ -10,27 +10,8 @@ $(document).ready(function(){
   		'<div class="galery-arrow-right"><img src="img/angleRight.svg"></div>'
   	]
   });
-  $("#owl-menu").owlCarousel({
-    items:1, 
-    nav:true,
-    dots: false,
-    navText:[
-      '<div class="food-menu-arrow-left"><img src="img/angleLeft.svg"></div>', 
-      '<div class="food-menu-arrow-right"><img src="img/angleRight.svg"></div>'
-    ]
-  });
 
-  $("#owl-reviews").owlCarousel({
-    items:1, 
-    nav:true,
-    loop:true,
-    dots: true,
-    navText:[
-      '<div class="review-arrow-left"><img src="img/Left.svg"></div>', 
-      '<div class="review-arrow-right"><img src="img/Right.svg"></div>'
-    ]
-  });
-
+  
   $("#owl-order-menu").owlCarousel({
     items:1, 
     nav:true,
@@ -46,9 +27,6 @@ $(document).ready(function(){
 
   toTop()
   mask()
-  select()
-  datepickerMine()
-  scrollbarMine()
 
 });
 
@@ -66,26 +44,6 @@ function mask () {
       phone: inputPhone.val()
     })  
   })
-}
-
-function select () {
-
-  $(document).ready(function() {
-    $('select').niceSelect();
-  });
-}
-
-
-function datepickerMine () {
-  $(document).ready(function(){
-    $('.datepicker-here').datepicker({
-      autoClose:true
-    });
-  });
-}
-
-function scrollbarMine () {
-  $('.edit-form-wraper').scrollbar()
 }
 
 function toTop () {

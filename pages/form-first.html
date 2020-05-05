@@ -62,31 +62,31 @@
 					</div>
 				</div>
 			</div>
-			<form class="order-form contact-info col-md-12 col-lg-9">
+			<form data-id="1" class="order-form contact-info col-md-12 col-lg-9">
 				<h1>Ваша контактная информация </h1>
 				<div class="row">
 					<div class="form-item col-sm-6">
 						<label for="#surname">Фамилия</label>
-						<input type="text" id="surname">
+						<input required type="text" id="surname">
 					</div>
 					<div class="form-item col-sm-6">
 						<label for="#name">Имя</label>
-						<input type="text" id="name">	
+						<input required type="text" id="name">	
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-item col-sm-6">
 						<label for="#telephone">Телефон</label>
-						<input type="text" id="telephone">	
+						<input required type="text" id="telephone">	
 					</div>
 					<div class="form-item col-sm-6">
 						<label for="#email">e-mail</label>
-						<input type="text" id="email">
+						<input required type="email" id="email">
 					</div>
 				</div>
 				<div class="row offset-5">
 						<a class="btn-cancel" href="../index.html">Отменить заказ</a>
-						<a class="btn-continue btn-main btn-filled" href="form-second.html">Далее</a>
+						<a class="btn-continue btn-main btn-filled" id="addInfo" href="form-second.html">Далее</a>
 				</div>
 			</form>
 		</div>
@@ -124,6 +124,7 @@
 	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="../libs/jquery.mask.js"></script>
+	<script src="./info.js"></script>
 	<script src="../js/index.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../libs/owl-carousel/dist/owl.carousel.min.js"></script>

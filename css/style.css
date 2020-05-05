@@ -251,6 +251,7 @@ body {
   height: 350px;
   width: 350px;
 }
+
 .food-menu .tab-content .tab-menu {
   width: 720px;
   height: 350px;
@@ -258,6 +259,12 @@ body {
   color: #fff;
   padding: 54px 37px 36px 50px;
 }
+
+.food-menu .tab-content .tab-menu .dishes-list{
+  overflow-y: auto;
+  max-height: 196px;
+}
+
 .food-menu .tab-content .tab-menu li {
   margin-bottom: 20px;
 }
@@ -278,8 +285,9 @@ body {
 .food-menu .tab-content .tab-menu .food-name-block {
   display: flex;
   align-items: center;
+  margin-left: 15px;
 }
-.food-menu .tab-content .tab-menu .food-name-block img {
+.food-menu .tab-content .tab-menu .food-name-block .food-menu-img {
   margin-right: 15px;
 }
 .food-menu .tab-content .tab-menu .cost-block {
@@ -705,26 +713,19 @@ footer .btn-top-wraper .btn-top:hover {
   letter-spacing: 1.5px;
   margin-bottom: 50px;
 }
-.event-info .form-right .owl-carousel .owl-item {
-  padding: 0 15px;
-}
-.event-info .form-right .owl-carousel .owl-nav {
-  text-align: right;
-}
-.event-info .form-right #owl-order-menu .item ul li {
+
+.event-info .form-right .menu-dish-list {
+  height: 229px;
+  padding: 0 24px 0 14px;
+  font-size: 14px;
   color: #fff;
-  margin-bottom: 20px;
 }
-.event-info .form-right #owl-order-menu .item ul li .food-name-block {
-  display: flex;
-  align-items: center;
+
+.event-info .form-right .menu-dish-list.edit-form-wraper {
+  height: 229px;
+  overflow-y: auto;
 }
-.event-info .form-right #owl-order-menu .item ul li .food-name-block img {
-  margin-right: 10px;
-}
-.event-info .form-right #owl-order-menu .item ul li .food-name-block span {
-  display: inline-block;
-}
+
 .edit-form-wraper {
   padding-top: 5px;
   overflow-y: scroll;
