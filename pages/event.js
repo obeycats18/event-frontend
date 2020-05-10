@@ -47,10 +47,9 @@ function fetchMenu(id) {
         .then(function(data) {
             if(data.status === 200) {
                 renderMenu(data.menu)
+                localStorage.setItem('menuId', id)
             }
         })
-
-    
 }
 
 function renderMenu(menu) {

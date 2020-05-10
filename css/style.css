@@ -728,7 +728,7 @@ footer .btn-top-wraper .btn-top:hover {
 
 .edit-form-wraper {
   padding-top: 5px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   height: 400px;
 }
@@ -753,9 +753,9 @@ footer .btn-top-wraper .btn-top:hover {
 .edit-form-wraper .edit-form-item img {
   margin-left: 15px;
 }
-.edit-form-wraper .edit-form-item .name {
+/* .edit-form-wraper .edit-form-item .name {
   padding: 0 30% 0 20px;
-}
+} */
 .edit-form-wraper .edit-form-item .trash {
   margin-left: 15px;
   position: relative;
