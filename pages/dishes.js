@@ -2,30 +2,48 @@ const url = new URL('http:/localhost:8080/menu')
 url.searchParams.set('id', localStorage.getItem('menuId'))
 
 let dishesLocal = []
+let totalPrice = 0
 
 fetch(url)
     .then(response => response.json())
     .then(data => {
         if(data.status === 200) {
             dishesLocal.push(...data.menu.dishes)
-            renderDishes(data.menu.dishes)
+            renderDishes(dishesLocal)
         }
     })
     .then( () => addDishes())
+    .then( () => sendDishes())
+    
 
-    console.log(dishesLocal)
 
-const editDishes = (currentDish) => {
+const caclPrice = () => {
+
+    let dishesPrice = 0
+
+    dishesLocal.forEach( dish => {
+        dishesPrice += dish.cost
+    })
+    totalPrice = dishesPrice * localStorage.getItem('countPeople')
+}
+
+const editDishes = currentDish => {
 
     dishesLocal = dishesLocal.filter( dish => dish._id !== currentDish)
 
     renderDishes()
 
-    const editDishesBtn = document.querySelector('#editDishes')
-    editDishesBtn.addEventListener('click', () => sendDishes())    
-
 } 
 
+const pushDish = (dishes, currentDish) => {
+    const dish = dishes.find( dish => dish._id === currentDish)
+    dishesLocal.push(dish)
+    renderDishes()
+    $("#dishesModal").modal('hide')
+    
+}
+
+// Добавать блюда с попапа
 const addDishes = () => {
     const addDishesBtn = document.querySelector('#addDishes')
     addDishesBtn.addEventListener('click', () => {
@@ -36,7 +54,7 @@ const addDishes = () => {
                 .then(response => response.json())
                 .then(data => {
                     if(data.status === 200) {
-                        renderAllDishes(data.dishes)
+                        renderAllDishes(data.dishes, modalBody)
                     }
                     return data.dishes
                 })
@@ -52,17 +70,8 @@ const addDishes = () => {
     })
    
 }
-
-const pushDish = (dishes, currentDish) => {
-    let dish = dishes.find( dish => dish._id === currentDish)
-    dishesLocal.push(dish)
-    renderDishes()
-    $("#dishesModal").modal('hide')
-    
-}
-
-const renderAllDishes = dishes => {
-    const modalBody = document.querySelector('.modal-body')
+// Отрисовать блюда в попапе
+const renderAllDishes = (dishes, modalBody) => {
     let doc = new DOMParser()
     
     dishes.forEach(dish => {
@@ -86,22 +95,27 @@ const renderAllDishes = dishes => {
 
 const sendDishes = () => {
 
-    const url = new URL('http:/localhost:8080/order/create')
-    url.searchParams.set('lastName', localStorage.getItem('lastName'))
-    
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify( {editedDishes: dishesLocal})
-    })
-        .then(response => response.json())
-        .then(data => {
-            if(data.status === 200) {
-                console.log(data)
-            }
+    const editDishesBtn = document.querySelector('#editDishes')
+
+    editDishesBtn.addEventListener('click', () => {
+        caclPrice()
+        const url = new URL('http:/localhost:8080/order/create')
+        url.searchParams.set('lastName', localStorage.getItem('lastName'))
+        
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify( {editedDishes: dishesLocal, cost: totalPrice})
         })
+            .then(response => response.json())
+            .then(data => {
+                if(data.status === 200) {
+                    console.log(data)
+                }
+            })
+    })    
 }
 
 const renderDishes = () => {

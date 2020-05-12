@@ -1,5 +1,4 @@
 function select () {
-    console.log('select')
     $('#type-event').niceSelect();
 }
   
@@ -24,7 +23,6 @@ fetch('http:/localhost:8080/menus')
 
 
 function renderSelect(menu) {
-    console.log('renderSelect')
     const select = document.querySelector('#type-event')
     menu.forEach( item => {
         const option = document.createElement('option')
@@ -54,7 +52,6 @@ function fetchMenu(id) {
 
 function renderMenu(menu) {
 
-    console.log(menu)
     let doc = new DOMParser()
     const formRight = document.querySelector('.form-right')
 
@@ -94,7 +91,6 @@ function renderMenu(menu) {
 }
 
 function getEventInfo () {
-    console.log('getEventInfo')
 
     const time = document.querySelector('#time')
     const date = document.querySelector('#date-event')
@@ -116,7 +112,10 @@ function getEventInfo () {
 
     const btn = document.querySelector('#addEventInfo')
    
-    btn.addEventListener('click', function (e) {
+    btn.addEventListener('click', ()  => {
+
+        localStorage.setItem('countPeople', countPeople.value)
+
         const body = {
             date: date.value,
             time: time.value,

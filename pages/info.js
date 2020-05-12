@@ -1,9 +1,12 @@
+$(document).ready(function() {
+    $('#telephone').mask("+38(999) 999-9999");
+})
+
 function getInfo () {
     
     const lastName = document.querySelector('#surname')
     const firstName = document.querySelector('#name')
     const phone = document.querySelector('#telephone')
-    // const email = document.querySelector('#email').value
 
     const btn = document.querySelector('#addInfo')
 
