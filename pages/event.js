@@ -106,7 +106,10 @@ function getEventInfo () {
         
     }
 
-    options.forEach(option => option.addEventListener('click', (e) => fetchMenu(e.target.dataset.value)))
+    options.forEach(option => option.addEventListener('click', (e) => {
+        localStorage.setItem('typeEvent', option.innerText) 
+        fetchMenu(e.target.dataset.value)
+    }))
 
     const countPeople = document.querySelector('#count-people')
 
@@ -120,6 +123,7 @@ function getEventInfo () {
             date: date.value,
             time: time.value,
             count_peoples: countPeople.value,
+            typeEvent: localStorage.getItem('typeEvent')
         }
    
         const url = new URL('http:/localhost:8080/order/create')
