@@ -240,12 +240,13 @@ body {
 }
 .food-menu .nav-item {
   margin-right: 20px;
+  margin-bottom: 40px;
 }
 .food-menu .nav-item a {
   text-decoration: none;
 }
 .food-menu .tab-content {
-  margin-top: 120px;
+  margin-top: 50px;
 }
 .food-menu .tab-content .tab-image {
   height: 350px;
