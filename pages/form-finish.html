@@ -46,7 +46,7 @@
 				<p>Мы свяжемся с вами в ближайшее время</p>
 				<a class="btn-continue btn-main btn-filled" id="clearStorage" href="../index.html">На главную страницу</a>
 				<h2 id='price'></h2>
-				<a class="finish-details" href="">Посмотреть детали заказа</a>
+				<a class="finish-details" href="" data-toggle="modal" data-target="#detail">Посмотреть детали заказа</a>
 			</form>
 		</div>
 		<img class="vector" id="vector1" src="../img/Vector 2.svg" alt="">
@@ -80,6 +80,29 @@
 			</div>
 		</div>	
 	</footer>
+
+	<!-- Hidden -->
+	<div class="hidden">
+		<div class="modal fade" id="detail" tabindex="-1" role="dialog" aria-labelledby="detailLabel">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="#detailLabel">Детали заказа</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<!-- <p>Modal body text goes here.</p> -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="./finish.js"></script>
 
